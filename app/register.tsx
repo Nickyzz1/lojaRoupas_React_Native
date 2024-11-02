@@ -1,5 +1,6 @@
 import { Link } from "expo-router";
 
+import { router } from "expo-router";
 import { FIREBASE_APP, FIREBASE_AUTH } from '@/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useRef, useEffect, useState } from 'react';
@@ -29,7 +30,8 @@ export default function RegisterUser() {
       createUserWithEmailAndPassword(auth, email, pass)
       .then((dadosUsuario) => {
         console.log(dadosUsuario);
-        Alert.alert("cadastrado com sucesso");
+        Alert.alert("cadastrado com sucesso")
+        router.push("./index");
       }).catch((err => {
         alert(err.message)
       }))

@@ -1,0 +1,50 @@
+[{
+    "id": 7,
+    "name": "Blusa de Tricô Rosa",
+    "description": "Blusa de tricô, ideal para o inverno.",
+    "price": 59.90,
+    "image": "https://example.com/images/blusa-trico-rosa.jpg",
+    "category": "Blusas"
+  },
+  {
+    "id": 8,
+    "name": "Blusa Manga Longa Vermelha",
+    "description": "Blusa vermelha confortável para o dia a dia.",
+    "price": 49.90,
+    "image": "https://example.com/images/blusa-vermelha.jpg",
+    "category": "Blusas"
+  },
+  {
+    "id": 9,
+    "name": "Blusa de Moletom Preta",
+    "description": "Blusa de moletom com capuz.",
+    "price": 69.90,
+    "image": "https://example.com/images/blusa-moletom.jpg",
+    "category": "Blusas"
+  },
+  {
+    "id": 10,
+    "name": "Blusa Básica Cinza",
+    "description": "Blusa cinza básica e confortável.",
+    "price": 39.90,
+    "image": "https://example.com/images/blusa-cinza.jpg",
+    "category": "Blusas"
+  },
+  {
+    "id": 11,
+    "name": "Blusa com Renda",
+    "description": "Blusa com detalhes em renda, elegante e feminina.",
+    "price": 55.90,
+    "image": "https://example.com/images/blusa-renda.jpg",
+    "category": "Blusas"
+  },
+  {
+    "id": 12,
+    "name": "Blusa de Lã Bege",
+    "description": "Blusa de lã, perfeita para o inverno.",
+    "price": 75.00,
+    "image": "https://example.com/images/blusa-la.jpg",
+    "category": "Blusas"
+  }
+  
+]

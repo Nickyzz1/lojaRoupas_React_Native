@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "Camiseta Branca Básica",
+      "description": "Camiseta de algodão confortável e casual.",
+      "price": 29.90,
+      "image": "https://example.com/images/camiseta-branca.jpg",
+      "category": "Camisetas"
+    },
+    {
+      "id": 2,
+      "name": "Camiseta Estampada Azul",
+      "description": "Camiseta azul com estampa moderna.",
+      "price": 34.90,
+      "image": "https://example.com/images/camiseta-azul.jpg",
+      "category": "Camisetas"
+    },
+    {
+      "id": 3,
+      "name": "Camiseta Preta Listrada",
+      "description": "Camiseta preta com listras brancas, ideal para qualquer ocasião.",
+      "price": 39.90,
+      "image": "https://example.com/images/camiseta-preta.jpg",
+      "category": "Camisetas"
+    },
+    {
+      "id": 4,
+      "name": "Camiseta Verde Militar",
+      "description": "Camiseta verde com tecido respirável.",
+      "price": 35.50,
+      "image": "https://example.com/images/camiseta-verde.jpg",
+      "category": "Camisetas"
+    },
+    {
+      "id": 5,
+      "name": "Camiseta Gola V Branca",
+      "description": "Camiseta branca com gola V, perfeita para o dia a dia.",
+      "price": 32.00,
+      "image": "https://example.com/images/camiseta-gola-v.jpg",
+      "category": "Camisetas"
+    },
+    {
+      "id": 6,
+      "name": "Camiseta Manga Longa",
+      "description": "Camiseta de manga longa ideal para dias frios.",
+      "price": 42.00,
+      "image": "https://example.com/images/camiseta-manga-longa.jpg",
+      "category": "Camisetas"
+    }
+]

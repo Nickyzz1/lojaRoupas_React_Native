@@ -83,9 +83,6 @@ import {
       outputRange: [-200, 0], // Movimenta a onda horizontalmente
     });
   
-  
-  
-  
     return (
   
       // <LinearGradient
