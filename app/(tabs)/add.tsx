@@ -39,7 +39,11 @@ export default function HomeScreen() {
     };
 
     return (
+
         <View style={styles.container}>
+
+            <Text style={styles.title}>Adicione produtos aqui</Text>
+
             <TextInput
                 style={styles.input}
                 placeholder="Digite um título"
@@ -137,6 +141,11 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:"center",
     gap: 20
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 20,
+    margin: 12
   }
 
 });

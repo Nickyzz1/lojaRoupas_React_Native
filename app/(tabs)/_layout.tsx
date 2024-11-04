@@ -10,40 +10,65 @@ export default function TabLayout() {
 
       <Tabs>
         <Tabs.Screen
-          name="index"
+          name="add"
           options={{
             headerShown: false,
             tabBarIcon: () => (
               <>
-                <Text>😘</Text>
+                <Text>🔖</Text>
               </>
             ),
           }}
         ></Tabs.Screen>
 
         <Tabs.Screen
-          name="explore"
+          name="shirts"
           options={{
             headerShown: false,
             tabBarIcon: () => (
               <>
-                <Text>👌</Text>
+                <Text>👚</Text>
               </>
             ),
           }}
         ></Tabs.Screen>
 
         <Tabs.Screen
-          name="list"
+          name="jacket"
           options={{
             headerShown: false,
             tabBarIcon: () => (
               <>
-                <Text>📃</Text>
+                <Text>🧥</Text>
               </>
             ),
           }}
         ></Tabs.Screen>
+
+      <Tabs.Screen
+          name="pants"
+          options={{
+            headerShown: false,
+            tabBarIcon: () => (
+              <>
+                <Text>👖</Text>
+              </>
+            ),
+          }}
+        ></Tabs.Screen>
+
+    <Tabs.Screen
+          name="shorts"
+          options={{
+            headerShown: false,
+            tabBarIcon: () => (
+              <>
+                <Text>🩳</Text>
+              </>
+            ),
+          }}
+        ></Tabs.Screen>
+
       </Tabs>
     </>
   );

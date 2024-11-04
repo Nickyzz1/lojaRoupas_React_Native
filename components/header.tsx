@@ -11,8 +11,8 @@ export const Header = ({ image }: { image: ImageSourcePropType }) => {
   return (
     <>
       <View style={styles.bg}>
-        <Image source={image} style={styles.img} />
-        <Text style={styles.txt}>Header exemplo</Text>
+        {/* <Image source={image} style={styles.img} /> */}
+        <Text style={styles.txt}>Morgana</Text>
       </View>
     </>
   );
