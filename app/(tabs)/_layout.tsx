@@ -10,19 +10,7 @@ export default function TabLayout() {
 
       <Tabs>
         <Tabs.Screen
-          name="add"
-          options={{
-            headerShown: false,
-            tabBarIcon: () => (
-              <>
-                <Text>🔖</Text>
-              </>
-            ),
-          }}
-        ></Tabs.Screen>
-
-        <Tabs.Screen
-          name="shirts"
+          name="index"
           options={{
             headerShown: false,
             tabBarIcon: () => (

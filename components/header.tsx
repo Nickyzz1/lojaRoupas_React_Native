@@ -1,45 +1,36 @@
-// import {Text, ImageSourcePropType, Image, View, StyleSheet} from "react-native";
-
 import React from "react";
-import { Text } from "react-native";
-import { ImageSourcePropType } from "react-native";
-import { Image } from "react-native";
-import { View } from "react-native";
-import { StyleSheet } from "react-native";
+import { Text, Image, View, StyleSheet } from "react-native";
 
-export const Header = ({ image }: { image: ImageSourcePropType }) => {
+export const Header = () => {
   return (
-    <>
-      <View style={styles.bg}>
-        {/* <Image source={image} style={styles.img} /> */}
-        <Text style={styles.txt}>Morgana</Text>
-      </View>
-    </>
+    <View style={styles.bg}>
+      <Image
+        source={require('@/assets/images/icons8-loja-100.png')}
+        style={styles.img}
+        resizeMode="contain" // Use "contain" para manter as proporções
+      />
+      <Text style={styles.txt}>Morgana</Text>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   bg: {
-    backgroundColor: "#252525",
+    backgroundColor: "#4F1077FF",
     justifyContent: "center",
-    // alignItems: "center",
-    display: "flex",
+    alignItems: "center",
+    padding: 10,
     flexDirection: "row",
-    // paddingHorizontable: 10,
-    paddingVertical: 10,
   },
-  img: 
-  {
-    alignSelf: "flex-start",
-    height: 20,
- 
+  img: {
+    height: 50, 
+    width: 50, 
+    marginRight: 10,
   },
   txt: {
-    color: "#E77E7EFF",
+    color: "#FFFFFFFF",
     fontWeight: "500",
     fontSize: 20,
-    fontFamily: 'ComicNeue-Regular.ttf', // Substitua pelo nome correto da fonte
-  }
+    fontFamily: 'ComicNeue-Regular.ttf',
+  },
 });
-
-

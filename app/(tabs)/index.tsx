@@ -4,7 +4,7 @@ import { FIRESTORE_DB } from "@/firebaseConfig";
 import { collection, addDoc, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
 
 // Definindo a interface para o usuário
-interface shorts {
+interface shirts {
     id: string;
     name: string;
     size: string;
@@ -12,45 +12,45 @@ interface shorts {
     url: string;
 }
 
-export default function shorts() {
-    const [shortsTb, setShortsTb] = useState<shorts[]>([]);
-    const [nameShorts, setNameShorts] = useState('');
-    const [sizeShorts, setSizeShorts] = useState('');
-    const [priceShorts, setPriceShorts] = useState('');
-    const [urlShorts, setUrlShorts] = useState('');
-    const [editingShorts, setEditingShorts] = useState<string | null>(null);
+export default function shirts() {
+    const [shirtTb, setShirtTb] = useState<shirts[]>([]);
+    const [nameShirt, setNameShirt] = useState('');
+    const [sizeShirt, setSizeShirt] = useState('');
+    const [priceShirt, setPriceShirt] = useState('');
+    const [urlShirt, setUrlShirt] = useState('');
+    const [editingShirt, setEditingShirt] = useState<string | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
-        const unsubscribe = onSnapshot(collection(FIRESTORE_DB, "tbShorts"), (snapshot) => {
-            const ShortsList: shorts[] = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as shorts[];
-            setShortsTb(ShortsList);
+        const unsubscribe = onSnapshot(collection(FIRESTORE_DB, "tbShirts"), (snapshot) => {
+            const jacketsList: shirts[] = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as shirts[];
+            setShirtTb(jacketsList);
         });
 
         return () => unsubscribe();
     }, []);
 
-    const add = async () => {
-        if (nameShorts.trim() === "") {
+    const addJackets = async () => {
+        if (nameShirt.trim() === "") {
             Alert.alert("Por favor, insira um nome.");
             return;
         }
-        await addDoc(collection(FIRESTORE_DB, "tbShorts"), { name: nameShorts, size: sizeShorts, price: priceShorts, url: urlShorts });
+        await addDoc(collection(FIRESTORE_DB, "tbShirts"), { name: nameShirt, size: sizeShirt, price: priceShirt, url: urlShirt });
         clearForm();
     };
 
-    const deleteShorts = async (id: string) => {
-        await deleteDoc(doc(FIRESTORE_DB, "tbShorts", id));
+    const deleteJackets = async (id: string) => {
+        await deleteDoc(doc(FIRESTORE_DB, "tbShirts", id));
     };
 
-    const updateShorts = async () => {
-        if (!editingShorts) return;
+    const updateJacket = async () => {
+        if (!editingShirt) return;
 
-        await updateDoc(doc(FIRESTORE_DB, "tbShorts", editingShorts), {
-            name: nameShorts,
-            size: sizeShorts,
-            price: priceShorts,
-            url: urlShorts,
+        await updateDoc(doc(FIRESTORE_DB, "tbShirts", editingShirt), {
+            name: nameShirt,
+            size: sizeShirt,
+            price: priceShirt,
+            url: urlShirt,
         });
 
         clearForm();
@@ -58,57 +58,57 @@ export default function shorts() {
     };
 
     const clearForm = () => {
-        setNameShorts('');
-        setSizeShorts('');
-        setPriceShorts('');
-        setUrlShorts('');
-        setEditingShorts(null);
+        setNameShirt('');
+        setSizeShirt('');
+        setPriceShirt('');
+        setUrlShirt('');
+        setEditingShirt(null);
     };
 
-    const openEditModal = (s: shorts) => {
-        setNameShorts(s.name);
-        setSizeShorts(s.size);
-        setPriceShorts(s.price);
-        setUrlShorts(s.url);
-        setEditingShorts(s.id);
+    const openEditModal = (s: shirts) => {
+        setNameShirt(s.name);
+        setSizeShirt(s.size);
+        setPriceShirt(s.price);
+        setUrlShirt(s.url);
+        setEditingShirt(s.id);
         setModalVisible(true);
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.box}>
-                <Text style={styles.title}>Adicione bermudas aqui</Text>
+                <Text style={styles.title}>Adicione camisas/camisetas aqui</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Digite um título"
-                    value={nameShorts}
-                    onChangeText={setNameShorts}
+                    value={nameShirt}
+                    onChangeText={setNameShirt}
                 />
                 <TextInput
                     style={styles.input}
                     placeholder="Digite o tamanho"
-                    value={sizeShorts}
-                    onChangeText={setSizeShorts}
+                    value={sizeShirt}
+                    onChangeText={setSizeShirt}
                 />
                 <TextInput
                     style={styles.input}
                     placeholder="Digite o preço"
-                    value={priceShorts}
-                    onChangeText={setPriceShorts}
+                    value={priceShirt}
+                    onChangeText={setPriceShirt}
                 />
                 <TextInput
                     style={styles.input}
                     placeholder="Cole aqui a URL da imagem do produto"
-                    value={urlShorts}
-                    onChangeText={setUrlShorts}
+                    value={urlShirt}
+                    onChangeText={setUrlShirt}
                 />
-                <TouchableOpacity style={styles.button} onPress={add}>
+                <TouchableOpacity style={styles.button} onPress={addJackets}>
                     <Text style={styles.buttonText}>Adicionar</Text>
                 </TouchableOpacity>
             </View>
 
             <FlatList
-                data={shortsTb}
+                data={shirtTb}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.userItem}>
@@ -117,7 +117,7 @@ export default function shorts() {
                         <TouchableOpacity onPress={() => openEditModal(item)}>
                             <Text style={styles.editButton}>Editar</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => deleteShorts(item.id)}>
+                        <TouchableOpacity onPress={() => deleteJackets(item.id)}>
                             <Text style={styles.deleteButton}>Excluir</Text>
                         </TouchableOpacity>
                     </View>
@@ -134,33 +134,33 @@ export default function shorts() {
             >
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
-                        <Text style={styles.modalTitle}>Editar bermuda</Text>
+                        <Text style={styles.modalTitle}>Editar Camisa</Text>
                         <TextInput
                             style={styles.input}
                             placeholder="Digite um título"
-                            value={nameShorts}
-                            onChangeText={setNameShorts}
+                            value={nameShirt}
+                            onChangeText={setNameShirt}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="Digite o tamanho"
-                            value={sizeShorts}
-                            onChangeText={setSizeShorts}
+                            value={sizeShirt}
+                            onChangeText={setSizeShirt}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="Digite o preço"
-                            value={priceShorts}
-                            onChangeText={setPriceShorts}
+                            value={priceShirt}
+                            onChangeText={setPriceShirt}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="Cole aqui a URL da imagem do produto"
-                            value={urlShorts}
-                            onChangeText={setUrlShorts}
+                            value={urlShirt}
+                            onChangeText={setUrlShirt}
                         />
                         <View style={styles.space}>
-                            <TouchableOpacity style={styles.button} onPress={updateShorts}>
+                            <TouchableOpacity style={styles.button} onPress={updateJacket}>
                                 <Text style={styles.buttonText}>Salvar</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
