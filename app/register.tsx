@@ -31,7 +31,7 @@ export default function RegisterUser() {
       .then((dadosUsuario) => {
         console.log(dadosUsuario);
         Alert.alert("cadastrado com sucesso")
-        router.push("./index");
+        router.push("./(tabs)");
       }).catch((err => {
         alert(err.message)
       }))
